@@ -32,3 +32,32 @@ function getHumanChoice(){
     return choice
 
 };
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice,computerChoice){
+    if ((computerChoice === "rock" && humanChoice === "scissors") || 
+       (computerChoice === "paper" && humanChoice === "rock") ||
+       (computerChoice === "scissors" && humanChoice === "paper")){
+        computerScore++;
+        console.log("YOU LOSE");
+    }
+     else if((humanChoice === "rock" && computerChoice === "scissors") || 
+     (humanChoice === "paper" && computerChoice === "rock") ||
+     (humanChoice === "scissors" && computerChoice === "paper")){
+        humanScore++;
+        console.log("YOU WIN");
+     }
+     else{
+        console.log("DRAW");
+    };
+}
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice().toUpperCase();
+
+
+
+function playGame(){
+    playRound(humanSelection, computerSelection);
+
+}
