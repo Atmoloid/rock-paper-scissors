@@ -9,5 +9,26 @@ function getComputerChoice(){
     else {
         return "Scissors";
     };
-}
-console.log(getComputerChoice());
+};
+
+function getHumanChoice(){
+    let repeat = true;
+    let choice = "";
+
+    while (repeat){
+        choice = prompt("Input your choice:");
+        if (choice !== null){
+
+            choice = choice.toLowerCase();
+            if (choice === "rock" || choice === "paper" || choice ==="scissors"){
+                repeat = false
+            }else{
+                alert("Error: Invalid choice! Please choose 'rock', 'paper', or 'scissors'.");
+            }
+        }
+        else{alert("Input cancelled. Please refresh to try again.");} 
+    }
+    
+    return choice
+
+};
