@@ -1,9 +1,9 @@
 function getComputerChoice(){
    const randomNum = Math.random()
-    if(Math.random() < 0.33){
+    if(randomNum < 0.33){
         return "Rock";
     }
-    else if(Math.random() < 0.66){
+    else if(randomNum < 0.66){
         return "Paper";
     }
     else {
@@ -36,28 +36,40 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice,computerChoice){
+    console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
     if ((computerChoice === "rock" && humanChoice === "scissors") || 
        (computerChoice === "paper" && humanChoice === "rock") ||
        (computerChoice === "scissors" && humanChoice === "paper")){
-        computerScore++;
+      computerScore++;
         console.log("YOU LOSE");
     }
      else if((humanChoice === "rock" && computerChoice === "scissors") || 
      (humanChoice === "paper" && computerChoice === "rock") ||
      (humanChoice === "scissors" && computerChoice === "paper")){
-        humanScore++;
+     humanScore++;
         console.log("YOU WIN");
      }
-     else{
+    else{
         console.log("DRAW");
     };
+    console.log(`Current Score -> Human: ${humanScore}, Computer: ${computerScore}`);
 }
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice().toUpperCase();
 
 
 
 function playGame(){
+    for(let i = 0; i < 5; i++){
+        const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice().toUpperCase();
     playRound(humanSelection, computerSelection);
-
+};
+console.log(`Final Score -> Human: ${humanScore}, Computer: ${computerScore}`);
+if (humanScore > computerScore) {
+    console.log("YOU WIN THE GAME!");
+} else if (computerScore > humanScore) {
+    console.log("YOU LOSE THE GAME!");
+} else {
+    console.log("THE GAME IS A DRAW!");
 }
+};
+playGame();
