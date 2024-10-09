@@ -60,7 +60,7 @@ function playRound(humanChoice,computerChoice){
 function playGame(){
     for(let i = 0; i < 5; i++){
         const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice().toUpperCase();
+        const humanSelection = getHumanChoice();
     playRound(humanSelection, computerSelection);
 };
 console.log(`Final Score -> Human: ${humanScore}, Computer: ${computerScore}`);
