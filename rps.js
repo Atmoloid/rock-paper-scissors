@@ -1,13 +1,13 @@
 function getComputerChoice(){
    const randomNum = Math.random()
     if(randomNum < 0.33){
-        return "Rock";
+        return "rock";
     }
     else if(randomNum < 0.66){
-        return "Paper";
+        return "paper";
     }
     else {
-        return "Scissors";
+        return "scissors";
     };
 };
 
@@ -32,10 +32,11 @@ function getHumanChoice(){
     return choice
 
 };
-let humanScore = 0;
-let computerScore = 0;
 
+let  humanScore = 0;
+  let  computerScore = 0;
 function playRound(humanChoice,computerChoice){
+    
     console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
     if ((computerChoice === "rock" && humanChoice === "scissors") || 
        (computerChoice === "paper" && humanChoice === "rock") ||
@@ -58,6 +59,8 @@ function playRound(humanChoice,computerChoice){
 
 
 function playGame(){
+   humanScore = 0;
+   computerScore = 0;
     for(let i = 0; i < 5; i++){
         const computerSelection = getComputerChoice();
         const humanSelection = getHumanChoice();
