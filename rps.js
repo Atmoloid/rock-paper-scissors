@@ -2,10 +2,10 @@ const resultDiv = document.getElementById("result");
 const humanScoreSpan = document.getElementById("human-score");
 const computerScoreSpan = document.getElementById("computer-score");
 const buttons = document.querySelectorAll(".button");
-buttons.forEach(button => {
+humanChoice = buttons.forEach(button => {
     button.addEventListener("click", () => {
-        const playerSelection = button.id;
-        playRound(playerSelection);
+        const humanSelection = button.id;
+        playRound(humanSelection);
     });
 });
 function getComputerChoice(){
@@ -20,10 +20,12 @@ function getComputerChoice(){
         return "scissors";
     };
 };
+  
 function updateResult(result) {
     resultDiv.textContent = result;
 }
 /*function getHumanChoice(){
+   
     /*let repeat = true;
     let choice = "";
 
@@ -40,18 +42,15 @@ function updateResult(result) {
         }
         else{alert("Input cancelled. Please refresh to try again.");} 
     }
-    let rock = document.getElementById("rock");
-    let paper = document.getElementById("paper");
-    let scissors = document.getElementById("scissors");
-    addEventListener("onclick",()=>)
+   
     //return choice
-
+    
 };*/
-
+//getComputerChoice();
 let  humanScore = 0;
   let  computerScore = 0;
 function playRound(humanChoice,computerChoice){
-    
+   getComputerChoice();
     console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
     if ((computerChoice === "rock" && humanChoice === "scissors") || 
        (computerChoice === "paper" && humanChoice === "rock") ||
@@ -71,7 +70,7 @@ function playRound(humanChoice,computerChoice){
     console.log(`Current Score -> Human: ${humanScore}, Computer: ${computerScore}`);
    
 }
-
+/*playRound(/*humanSelection, computerSelection);*/
 
 
 /*function playGame(){
@@ -79,7 +78,7 @@ function playRound(humanChoice,computerChoice){
    computerScore = 0;
     for(let i = 0; i < 5; i++){
         const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
+        const humanSelection = humanChoice;
     playRound(humanSelection, computerSelection);
 };
 console.log(`Final Score -> Human: ${humanScore}, Computer: ${computerScore}`);
@@ -90,5 +89,5 @@ if (humanScore > computerScore) {
 } else {
     console.log("THE GAME IS A DRAW!");
 }
-
+}
 playGame();*/
