@@ -5,7 +5,7 @@ const buttons = document.querySelectorAll(".button");
 humanChoice = buttons.forEach(button => {
     button.addEventListener("click", () => {
         const humanSelection = button.id;
-        playRound(humanSelection);
+        playRound(humanSelection,getComputerChoice());
     });
 });
 function getComputerChoice(){
