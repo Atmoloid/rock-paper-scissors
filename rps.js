@@ -22,7 +22,11 @@ function getComputerChoice(){
 };
   
 function updateResult(result) {
-    resultDiv.textContent = result;
+    humanScoreSpan.textContent = result;
+    computerScoreSpan.textContent = result;
+}
+function computerResult(result){
+    computerScoreSpan.textContent = result;
 }
 /*function getHumanChoice(){
    
@@ -68,7 +72,8 @@ function playRound(humanChoice,computerChoice){
         console.log("DRAW");
     };
     console.log(`Current Score -> Human: ${humanScore}, Computer: ${computerScore}`);
-   
+    updateResult(humanScore);
+    computerResult(computerScore);
 }
 /*playRound(/*humanSelection, computerSelection);*/
 
